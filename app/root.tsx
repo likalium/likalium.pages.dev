@@ -19,20 +19,20 @@ import stylesheet from "./tailwind.css";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
-  { rel: "icon", href: "./favicon.ico"},
-  { rel: "preload", href: "./assets/newton.jpg" },
-  { rel: "preload", href: "./assets/spirit.jpg" },
-  { rel: "preload", href: "./assets/Tux.svg" },
-  { rel: "preload", href: "./assets/torvalds.jpg" },
-  { rel: "preload", href: "./assets/arch.png" },
-  { rel: "preload", href: "./assets/nixos.png" },
-  { rel: "preload", href: "./assets/debian.png" },
-  { rel: "preload", href: "./assets/voidlinux.png" },
-  { rel: "preload", href: "./assets/mfdoom.jpg" },
-  { rel: "preload", href: "./assets/mfdoomlarge.jpg" },
-  { rel: "preload", href: "./assets/madvillainy.jpg" },
-  { rel: "preload", href: "./assets/mmfood.jpg" },
-  { rel: "preload", href: "./vaudevillevillain.jpg" }
+  { rel: "icon", href: "./favicon.ico", as: "image" },
+  { rel: "preload", href: "./assets/newton.jpg" , as: "image" },
+  { rel: "preload", href: "./assets/spirit.jpg" , as: "image" },
+  { rel: "preload", href: "./assets/Tux.svg" , as: "image" },
+  { rel: "preload", href: "./assets/torvalds.jpg" , as: "image" },
+  { rel: "preload", href: "./assets/arch.png" , as: "image" },
+  { rel: "preload", href: "./assets/nixos.png" , as: "image" },
+  { rel: "preload", href: "./assets/debian.png" , as: "image" },
+  { rel: "preload", href: "./assets/voidlinux.png" , as: "image" },
+  { rel: "preload", href: "./assets/mfdoom.jpg" , as: "image" },
+  { rel: "preload", href: "./assets/mfdoomlarge.jpg" , as: "image" },
+  { rel: "preload", href: "./assets/madvillainy.jpg" , as: "image" },
+  { rel: "preload", href: "./assets/mmfood.jpg" , as: "image" },
+  { rel: "preload", href: "./vaudevillevillain.jpg", as: "image"  }
 ];
 
 export const meta: MetaFunction = () => {
