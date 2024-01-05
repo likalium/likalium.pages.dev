@@ -183,7 +183,7 @@ const iLikeData = [
 						<img src="./assets/mfdoomlarge.jpg" width="40%" className={imgClass} />
 					</div>
 					<div className="flex flex-row space-x-3 justify-end">
-						<img src="./assets/madvillainy.png" width="20%" className={imgClass} />
+						<img src="./assets/madvillainy.jpg" width="20%" className={imgClass} />
 						<img src="./assets/mmfood.jpg" width="20%" className={imgClass} />
 						<img src="./assets/vaudevillevillain.jpg" width="20%" className={imgClass} />
 					</div>
