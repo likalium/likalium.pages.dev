@@ -12,6 +12,7 @@
     "pages:deploy": "npm run build && wrangler pages deploy ./public"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
     "@remix-run/cloudflare": "^2.4.1",
     "@remix-run/cloudflare-pages": "^2.4.1",
     "@remix-run/css-bundle": "^2.4.1",

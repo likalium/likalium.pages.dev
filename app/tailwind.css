@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+	.nav-url {
+		@apply rounded hover:text-fg;
+	}
+	.url {
+		@apply text-cyan text-green1 hover:text-green hover:underline decoration-dashed;
+	}
+
+	.title {
+		@apply font-josefin;
+	}
+	.border-custom {
+		@apply ease-in duration-700 hover:border-green border-terminalBlack shadow-xl hover:shadow-none border-2 rounded-md p-3;
+	}
+	.txt-img-align {
+		@apply lg:flex lg:flex-row lg:justify-center my-2 space-x-6;
+	}
+	h1 {
+		@apply  text-3xl lg:text-6xl;
+	}
+	h2 {
+		@apply text-2xl lg:text-4xl;
+	}
+}
