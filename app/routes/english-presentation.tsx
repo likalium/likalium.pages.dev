@@ -352,7 +352,7 @@ export default function App() {
 			text: () => {
 				return (
 					<div>
-						<div className="flex flex-col place-items-center pb-12 text-center">
+						<div className="flex flex-col place-items-center pb-12 text-center space-y-3">
 							<h2 className="font-syne font-bold text-red text-6xl pb-4">Thanks for listening !</h2>
 							<h3 className="font-inter text-magenta text-3xl pb-2">I hope you enjoyed this presentation, because I litterally spent <span className="underline bg-[#9d7cd83d] border-2 p-1 rounded-md border-bg">hours</span> on it :)</h3>
 							<h3 className="font-inter text-green text-3xl"><ArrowRight className="inline" weight="bold" /> Everything that you've seen so far was entirely coded <span className="italic">from scratch</span> by <span className="underline bg-[#9ece6a2f] border-2 p-1 rounded-md border-bg">me</span> and nobody else</h3>
@@ -373,8 +373,8 @@ export default function App() {
 			steps.map(step => {
 				return (
 					<div key={step.id} className={selected === step.id ?
-						"transition-colors duration-200 ease-linear delay-0 font-['Rajdhani'] bg-black border-2 border-orange rounded-2xl p-2 text-purple"
-						: "transition-colors duration-200 ease-linear delay-0 bg-bgDark font-['Rajdhani'] border-2 border-bg rounded-2xl p-2 text-dark5"}>
+						"transition-color ease-linear duration-200 delay-0 font-['Rajdhani'] bg-black border-2 border-orange rounded-2xl p-2 text-purple"
+						: "transition-colors ease-linear duration-200 delay-0 bg-bgDark font-['Rajdhani'] border-2 border-bg rounded-2xl p-2 text-dark5"}>
 						{step.id + 1}. {step.title}
 					</div>
 				)
