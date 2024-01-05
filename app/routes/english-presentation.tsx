@@ -373,8 +373,8 @@ export default function App() {
 			steps.map(step => {
 				return (
 					<div key={step.id} className={selected === step.id ?
-						"transition-color ease-linear duration-200 delay-0 font-['Rajdhani'] bg-black border-2 border-orange rounded-2xl p-2 text-purple"
-						: "transition-colors ease-linear duration-200 delay-0 bg-bgDark font-['Rajdhani'] border-2 border-bg rounded-2xl p-2 text-dark5"}>
+						"transition ease-linear duration-200 delay-0 font-['Rajdhani'] bg-black border-2 border-orange rounded-2xl p-2 text-purple"
+						: "transition ease-linear duration-200 delay-0 bg-bgDark font-['Rajdhani'] border-2 border-bg rounded-2xl p-2 text-dark5"}>
 						{step.id + 1}. {step.title}
 					</div>
 				)
