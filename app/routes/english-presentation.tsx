@@ -369,7 +369,7 @@ export default function App() {
 		}
 	]
 	function TopBar() {
-		const topBarElements = steps.map(step => {
+		return steps.map(step => {
 			return (
 				<div key={step.id} className={selected === step.id ?
 					"transition ease-linear duration-200 delay-0 font-['Rajdhani'] bg-black border-2 border-orange rounded-2xl p-2 text-purple"
@@ -378,11 +378,6 @@ export default function App() {
 				</div>
 			)
 		})
-		return (
-			<div>
-			{topBarElements}
-			</div>
-		)
 	}
 
 	function PrevButton() {
