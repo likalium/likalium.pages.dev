@@ -371,9 +371,13 @@ export default function App() {
 	function TopBar() {
 		return steps.map(step => {
 			return (
-				<div key={step.id} className={selected === step.id ? "transition ease-linear duration-200 delay-0 bg-black border-orange text-purple font-['Rajdhani'] border-2 rounded-2xl p-2" : "transition ease-linear duration-200 delay-0 bg-bgDark text-dark5 border-bg font-['Rajdhani'] border-2 rounded-2xl p-2"}>
+				<button
+					key={step.id}
+					className={selected === step.id ? "transition ease-linear duration-200 delay-0 bg-black border-orange text-purple font-['Rajdhani'] border-2 rounded-2xl p-2" : "transition ease-linear duration-200 delay-0 bg-bgDark text-dark5 border-bg font-['Rajdhani'] border-2 rounded-2xl p-2"}
+					onClick={() => setSelected(step.id)}
+				>
 					{step.id + 1}. {step.title}
-				</div>
+				</button>
 			)
 		})
 	}
