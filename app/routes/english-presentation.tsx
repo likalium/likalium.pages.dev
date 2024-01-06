@@ -369,23 +369,26 @@ export default function App() {
 		}
 	]
 	function TopBar() {
+		const topBarElements = steps.map(step => {
+			return (
+				<div key={step.id} className={selected === step.id ?
+					"transition ease-linear duration-200 delay-0 font-['Rajdhani'] bg-black border-2 border-orange rounded-2xl p-2 text-purple"
+					: "transition ease-linear duration-200 delay-0 bg-bgDark font-['Rajdhani'] border-2 border-bg rounded-2xl p-2 text-dark5"}>
+					{step.id + 1}. {step.title}
+				</div>
+			)
+		})
 		return (
-			steps.map(step => {
-				return (
-					<div key={step.id} className={selected === step.id ?
-						"transition ease-linear duration-200 delay-0 font-['Rajdhani'] bg-black border-2 border-orange rounded-2xl p-2 text-purple"
-						: "transition ease-linear duration-200 delay-0 bg-bgDark font-['Rajdhani'] border-2 border-bg rounded-2xl p-2 text-dark5"}>
-						{step.id + 1}. {step.title}
-					</div>
-				)
-			})
+			<div>
+			{topBarElements}
+			</div>
 		)
 	}
 
 	function PrevButton() {
 		return (
 			<button
-				className="transition linear border-2 duration-300 border-red rounded-2xl hover:bg-red hover:text-bgDark p-2 font-['Rajdhani']"
+				className="transition ease-linear border-2 duration-300 border-red rounded-2xl hover:bg-red hover:text-bgDark p-2 font-['Rajdhani']"
 				onClick={() => {
 				if (selected > 0) {
 					setSelected(selected - 1)
