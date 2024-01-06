@@ -131,7 +131,7 @@ const thisDayData = [
 	{
 		id: 0,
 		title: "Newton solves Bernoulli's problem",
-		subtitle: "British mathematician and physicist Isaac Newton solves in a day a problem he had six months to find a solution",
+		subtitle: "British mathematician and physicist Isaac Newton solves in a day a problem where he had six months to find a solution",
 		desc: "On January 26, 1697, Newton receives a mathematics problem from Swiss mathematician Jean Bernoulli. The challenge was to find a solution within six months. But Newton found the solution... the day he received the problem, just before going to bed.",
 	image: "./assets/newton.jpg",
 		height: "50%",
@@ -371,9 +371,7 @@ export default function App() {
 	function TopBar() {
 		return steps.map(step => {
 			return (
-				<div key={step.id} className={selected === step.id ?
-					"transition ease-linear duration-200 delay-0 font-['Rajdhani'] bg-black border-2 border-orange rounded-2xl p-2 text-purple"
-					: "transition ease-linear duration-200 delay-0 bg-bgDark font-['Rajdhani'] border-2 border-bg rounded-2xl p-2 text-dark5"}>
+				<div key={step.id} className={selected === step.id ? "transition ease-linear duration-200 delay-0 bg-black border-orange text-purple font-['Rajdhani'] border-2 rounded-2xl p-2" : "transition ease-linear duration-200 delay-0 bg-bgDark text-dark5 border-bg font-['Rajdhani'] border-2 rounded-2xl p-2"}>
 					{step.id + 1}. {step.title}
 				</div>
 			)
@@ -400,7 +398,7 @@ export default function App() {
 	function NextButton() {
 		return (
 			<button
-				className="transition linear delay-0 buration-300 border-2 border-green rounded-2xl hover:bg-green hover:text-bgDark p-2 font-['Rajdhani']"
+				className="transition ease-linear delay-0 buration-300 border-2 border-green rounded-2xl hover:bg-green hover:text-bgDark p-2 font-['Rajdhani']"
 				onClick={() => {
 				if (selected < steps.length - 1) {
 					setSelected(selected + 1)
