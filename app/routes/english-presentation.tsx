@@ -95,7 +95,7 @@ function Weather () {
 				<button
 					key={weatherButton.id}
 					className={ selected === weatherButton.id ? "transition ease-linear delay-0 duration-150 w-[144px] border-t-4 border-b-[4px] border-red1 p-3 bg-fg" : "transition ease-linear delay-0 duration-150 w-[144px] border-terminalBlack border-t-4 border-t-blue border-b-[4px] p-3 bg-fg" }
-					onClick={() => setSelected(weatherButton.id)} >
+					onClick={() => setSelected(weatherButton.id)}>
 					<div className="text-blue0 font-bold">{weatherButton.dayText} {weatherButton.dayNum}</div>
 					<div><img src={prefix + weatherButton.weatherIcon + ".svg"} className="inline" /></div>
 					<span className="font-bold">  t
@@ -369,7 +369,7 @@ export default function App() {
 		}
 	]
 	function TopBar() {
-		return steps.map(step => {
+		const TopBarButtons= steps.map(step => {
 			return (
 				<button
 					key={step.id}
@@ -380,6 +380,11 @@ export default function App() {
 				</button>
 			)
 		})
+		return (
+			<div className="flex flex-row space-x-2">
+				{TopBarButtons}
+			</div>
+		)
 	}
 
 	function PrevButton() {
@@ -419,9 +424,7 @@ export default function App() {
 	return (
 		<div>
 			<div className=" pb-3 flex flex-row place-content-between">
-				<div className="flex flex-row space-x-2">
-					<TopBar />
-				</div>
+			<TopBar />
 				<div className="flex flex-row space-x-2">
 					<PrevButton />
 					<NextButton />
