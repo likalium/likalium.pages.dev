@@ -110,7 +110,7 @@ function Weather () {
 	})
 	return (
 		<div className="flex flex-row justify-center">
-			<div className="border-2 border-bg rounded-md">
+			<div className="border-2 border-bg rounded-md bg-bg p-2">
 				<div className="bg-blue font-inter">
 					<div className=" flex pt-3 flex-row justify-center font-syne">
 						<p className="p-2"><span className="text-blue0">Weather for: </span><span className="font-bold text-red1">Paris, France</span></p>
