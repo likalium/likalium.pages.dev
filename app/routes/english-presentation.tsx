@@ -85,7 +85,6 @@ const weatherData = [
 ]
 
 // Useful classes
-const imgClass = "border-2 rounded-[5%] border-bg" // rounded corners for images
 
 function Weather () {
 	const [ selected, setSelected ] = useState(0);
@@ -109,13 +108,13 @@ function Weather () {
 		)
 	})
 	return (
-		<div className="flex flex-row justify-center">
-			<div className="bg-blue font-inter p-1">
-				<div className=" flex pt-3 flex-row justify-center font-syne">
+		<div className="flex flex-row justify-center font-['Overpass']">
+			<div className="bg-blue font-inter rounded-md">
+				<div className=" flex pt-3 flex-row justify-center">
 					<p className="p-2"><span className="text-blue0">Weather for: </span><span className="font-bold text-red1">Paris, France</span></p>
 					<br />
 				</div>
-				<div className="transition ease-linear delay-0 duration-300 flex flex-row justify-center pt-2">
+				<div className="flex flex-row justify-center pt-2">
 					<img height={150} width={150} src={prefix + weatherData[selected].weatherIcon + ".svg"} />
 				</div>
 				<div className="flex flex-row justify-center pb-3">
@@ -159,7 +158,7 @@ const iLikeData = [
 				<div className="p-3 flex flex-col space-y-2">
 					<div className="flex flex-row space-x-3 justify-end">
 						<img src="./assets/Tux.svg" width="20%" />
-						<img src="./assets/torvalds.jpg" width="20%" className={imgClass}/>
+						<img src="./assets/torvalds.jpg" width="20%" className="rounded-img" />
 					</div>
 					<div className="flex flex-row space-x-3 justify-end">
 						<img src="./assets/archlinux.png" width="10%" />
@@ -179,13 +178,13 @@ const iLikeData = [
 			return (
 				<div className="p-3 flex flex-col space-y-2">
 					<div className="flex flex-row justify-end space-x-6">
-						<img src="./assets/mfdoom.jpg" width="20%" className={imgClass} />
-						<img src="./assets/mfdoomlarge.jpg" width="40%" className={imgClass} />
+						<img src="./assets/mfdoom.jpg" width="20%" className="rounded-img" />
+						<img src="./assets/mfdoomlarge.jpg" width="40%" className="rounded-img" />
 					</div>
 					<div className="flex flex-row space-x-3 justify-end">
-						<img src="./assets/madvillainy.jpg" width="20%" className={imgClass} />
-						<img src="./assets/mmfood.jpg" width="20%" className={imgClass} />
-						<img src="./assets/vaudevillevillain.jpg" width="20%" className={imgClass} />
+						<img src="./assets/madvillainy.jpg" width="20%" className="rounded-img" />
+						<img src="./assets/mmfood.jpg" width="20%" className="rounded-img" />
+						<img src="./assets/vaudevillevillain.jpg" width="20%" className="rounded-img" />
 					</div>
 				</div>
 			)
@@ -224,7 +223,7 @@ export default function App() {
 									</div>
 									<p className="text-green1 pb-3">{d.desc}</p>
 								</div>
-								<img className={imgClass} src={d.image} height={d.height} width={d.width} />
+								<img className="rounded-img" src={d.image} height={d.height} width={d.width} />
 							</div>
 							<div>
 								<button

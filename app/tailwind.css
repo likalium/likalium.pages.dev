@@ -2,6 +2,7 @@
 @import url('https://rsms.me/inter/inter.css');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600&display=swap');
+@import url("https://overpass-30e2.kxcdn.com/overpass.css");
 
 @tailwind base;
 @tailwind components;
@@ -9,13 +10,24 @@
 
 
 @layer components {
+	/* Styling HTML elements */
+	h1 {
+		@apply  text-3xl lg:text-6xl;
+	}
+	h2 {
+		@apply text-2xl lg:text-4xl;
+	}
+
+	/* Custom classes */
 	.nav-url {
 		@apply rounded hover:text-fg;
 	}
 	.url {
 		@apply text-cyan text-green1 hover:text-green hover:underline decoration-dashed;
 	}
-
+	.rounded-img {
+		@apply border-2 rounded-[5%] border-bg
+	}
 	.title {
 		@apply font-josefin;
 	}
@@ -24,11 +36,5 @@
 	}
 	.txt-img-align {
 		@apply lg:flex lg:flex-row lg:justify-center my-2 space-x-6;
-	}
-	h1 {
-		@apply  text-3xl lg:text-6xl;
-	}
-	h2 {
-		@apply text-2xl lg:text-4xl;
 	}
 }

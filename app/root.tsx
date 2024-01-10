@@ -24,7 +24,7 @@ export const links: LinksFunction = () => [
   { rel: "preload", href: "./assets/spirit.jpg" , as: "image" },
   { rel: "preload", href: "./assets/Tux.svg" , as: "image" },
   { rel: "preload", href: "./assets/torvalds.jpg" , as: "image" },
-  { rel: "preload", href: "./assets/arch.png" , as: "image" },
+  { rel: "preload", href: "./assets/archlinux.png" , as: "image" },
   { rel: "preload", href: "./assets/nixos.png" , as: "image" },
   { rel: "preload", href: "./assets/debian.png" , as: "image" },
   { rel: "preload", href: "./assets/voidlinux.png" , as: "image" },
@@ -32,7 +32,7 @@ export const links: LinksFunction = () => [
   { rel: "preload", href: "./assets/mfdoomlarge.jpg" , as: "image" },
   { rel: "preload", href: "./assets/madvillainy.jpg" , as: "image" },
   { rel: "preload", href: "./assets/mmfood.jpg" , as: "image" },
-  { rel: "preload", href: "./vaudevillevillain.jpg", as: "image"  }
+  { rel: "preload", href: "./assets/vaudevillevillain.jpg", as: "image"  }
 ];
 
 export const meta: MetaFunction = () => {
