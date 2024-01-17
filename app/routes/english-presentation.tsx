@@ -11,81 +11,123 @@ const weatherData = [
 		dayNum: 22,
 		weatherIcon: "p3j",
 		description: "Cloudy",
-		minTemp: 8,
-		maxTemp: 12,
-		windIcon: "SO",
-		windSpeed: 40
+		minTemp: 2,
+		maxTemp: 4,
+		windIcon: "NO",
+		windSpeed: 20
 	},
 	{
 		id: 1,
 		dayText: "Tuesday",
 		dayNum: 23,
-		weatherIcon: "p13j",
-		description: "Rainy",
-		minTemp: 10,
-		maxTemp: 13,
-		windIcon: "SO",
-		windSpeed: 40
+		weatherIcon: "p9",
+		description: "Drizzle",
+		minTemp: -2,
+		maxTemp: 2,
+		windIcon: "SE",
+		windSpeed: 5
 	},
 	{
 		id: 2,
 		dayText: "Wenesday",
 		dayNum: 24,
-		weatherIcon: "p12j",
-		description: "Light showers",
-		minTemp: 10,
-		maxTemp: 13,
-		windIcon: "OSO",
-		windSpeed: 30
+		weatherIcon: "p13tern",
+		description: "Light rain",
+		minTemp: 0,
+		maxTemp: 6,
+		windIcon: "NNE",
+		windSpeed: 15
 	},
 	{
 		id: 3,
 		dayText: "Thursday",
 		dayNum: 25,
-		weatherIcon: "p3j",
-		description: "Cloudy",
-		minTemp: 7,
-		maxTemp: 12,
-		windIcon: "SSO",
-		windSpeed: 30
+		weatherIcon: "p4j",
+		description: "Cloudy sky",
+		minTemp: 0,
+		maxTemp: 3,
+		windIcon: "NNO",
+		windSpeed: 15
 	},
 	{
 		id: 4,
 		dayText: "Friday",
 		dayNum: 26,
-		weatherIcon: "p3j",
-		description: "Cloudy",
-		minTemp: 6,
-		maxTemp: 10,
-		windIcon: "SO",
+		weatherIcon: "p1j",
+		description: "Sunny",
+		minTemp: -2,
+		maxTemp: 3,
+		windIcon: "OSO",
 		windSpeed: 15
 	},
 	{
 		id: 5,
 		dayText: "Saturday",
 		dayNum: 27,
-		weatherIcon: "p3j",
-		description: "Cloudy",
-		minTemp: 4,
-		maxTemp: 8,
-		windIcon: "N",
-		windSpeed: 20
+		weatherIcon: "p2j",
+		description: "Sunny spells",
+		minTemp: -4,
+		maxTemp: 2,
+		windIcon: "SSE",
+		windSpeed: 15
 	},
 	{
 		id: 6,
 		dayText: "Sunday",
 		dayNum: 28,
 		weatherIcon: "p3j",
-		description: "Cloudy",
-		minTemp: 2,
-		maxTemp: 6,
-		windIcon: "NNE",
-		windSpeed: 20
+		description: "Very Cloudy",
+		minTemp: -1,
+		maxTemp: 12,
+		windIcon: "SSO",
+		windSpeed: 35
 	}
 ]
 
-// Useful classes
+// News
+const newsData = [
+	{
+		id: 0,
+		title: "Trump's comeback",
+		subtitle: "Donald Trump seems to be in the way of winning the american elections...",
+		desc: "The American electoral campaign started in Iowa, and Trump won hands down. Actually, it seems like americans forgot the behavior of Trump during his mandate from 2017 to 2021, and also his behavior when he had to leave the presidency. Only future will be able to tell us who will win these elections, but it's off to a bad start for democracy...",
+		image: "./assets/trump.jpg",
+		height: "50%",
+		width: "50%"
+	},
+	{
+		id: 1,
+		title: "French government voted the 'Immigration law'",
+		subtitle: "This Tuesday, French government voted a law that reduces rights for migrants",
+		desc: "French governement voted, this January 16, 2023, a law which makes that migrants will not able to receive some financial aids anymore. Yet, a part of these people actually need these aids, to make their family live. It's a controversial, and this decision isn't really approved by the people.",
+		image: "./assets/macron.jpg",
+		width: "50%",
+		height: "50%"
+	}
+]
+// On this day
+const thisDayData = [
+	{
+		id: 0,
+		title: "Newton solves Bernoulli's problem",
+		subtitle: "British mathematician and physicist Isaac Newton solves in a day a problem where he had six months to find a solution",
+		desc: "On January 26, 1697, Newton receives a mathematics problem from Swiss mathematician Jean Bernoulli. The challenge was to find a solution within six months. But Newton found the solution... the day he received the problem, just before going to bed.",
+	image: "./assets/newton.jpg",
+		height: "50%",
+		width: "50%"
+	},
+	{
+		id: 1,
+		title: "Spirit Rover begins Mars mission",
+		subtitle: "Twenty years ago, rover Spirit landed on Mars",
+		desc: "Launched June 10, 2003 by the NASA, the rover Spirit landed on Mars Janury 25, 2004. It took awesome pictures of Mars; in the highest quality at the time. It was supposed to last three months, but he was declared unoperational more than six years after landing, May 25, 2011.",
+		image: "./assets/spirit.jpg",
+		height: "50%",
+		width: "50%"
+	}
+]
 
+// Weather widget
 function Weather () {
 	const [ selected, setSelected ] = useState(0);
 	let prefix = "https://meteofrance.com/modules/custom/mf_tools_common_theme_public/svg/weather/"
@@ -125,27 +167,6 @@ function Weather () {
 		</div>
 	)
 }
-// On this day
-const thisDayData = [
-	{
-		id: 0,
-		title: "Newton solves Bernoulli's problem",
-		subtitle: "British mathematician and physicist Isaac Newton solves in a day a problem where he had six months to find a solution",
-		desc: "On January 26, 1697, Newton receives a mathematics problem from Swiss mathematician Jean Bernoulli. The challenge was to find a solution within six months. But Newton found the solution... the day he received the problem, just before going to bed.",
-	image: "./assets/newton.jpg",
-		height: "50%",
-		width: "50%"
-	},
-	{
-		id: 1,
-		title: "Spirit Rover begins Mars mission",
-		subtitle: "Twenty years ago, rover Spirit landed on Mars",
-		desc: "Launched June 10, 2003 by the NASA, the rover Spirit landed on Mars Janury 25, 2004. It took awesome pictures of Mars; in the highest quality at the time. It was supposed to last three months, but he was declared unoperational more than six years after landing, May 25, 2011.",
-		image: "./assets/spirit.jpg",
-		height: "50%",
-		width: "50%"
-	}
-]
 
 // Things I like
 const iLikeData = [
@@ -196,8 +217,8 @@ export default function App() {
 	const [ selected, setSelected ] = useState(0);
 	const [ thisDay, setThisDay ] = useState(0);
 	const [ iLike, setILike ] = useState(0);
+	const [news, setNews] = useState(0);
 
-	const liHover="transition ease-in-out delay-150"
 	function ThisDaySlides() {
 		return (
 			thisDayData.map(d => {
@@ -207,9 +228,9 @@ export default function App() {
 							<div>
 								<button
 									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
-									onClick={() => {
+								onClick={() => {
 										if (thisDay > 0) {
-											setThisDay(thisDay -1);
+										setThisDay(thisDay -1);
 										}
 									}}>
 									<ArrowLeft weight="bold"/>
@@ -228,7 +249,7 @@ export default function App() {
 							<div>
 								<button
 									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
-									onClick={() => {
+								onClick={() => {
 										if (thisDay < thisDayData.length-1) {
 											setThisDay(thisDay + 1)
 										}
@@ -242,6 +263,51 @@ export default function App() {
 			})
 		)
 	};
+	function NewsSlides() {
+		return (
+			newsData.map(d => {
+				if (d.id === news) {
+					return (
+						<div className=" flex flex-row place-items-center" key={d.id}>
+							<div>
+								<button
+									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
+								onClick={() => {
+										if (news > 0) {
+										setNews(news -1);
+										}
+									}}>
+									<ArrowLeft weight="bold"/>
+								</button>
+							</div>
+							<div className="transition-opacity ease-linear duration-500 p-3 txt-img-align">
+								<div className="flex flex-col space-y-4 justify-between">
+									<div>
+										<h2 className="font-syne font-bold text-blue5 text-4xl">{d.title}</h2>
+										<h3 className="font-['Rajdhani'] text-fg text-2xl">{d.subtitle}</h3>
+									</div>
+									<p className="text-green1 pb-3">{d.desc}</p>
+								</div>
+								<img className="rounded-img" src={d.image} height={d.height} width={d.width} />
+							</div>
+							<div>
+								<button
+									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
+								onClick={() => {
+										if (news < newsData.length-1) {
+											setNews(news + 1)
+										}
+									}}>
+									<ArrowRight weight="bold"/>
+								</button>
+							</div>
+						</div>
+					)
+				}
+			})
+		)
+	};
+	const liHover="transition ease-in-out delay-150"
 	function ILikeSlides() {
 		return (
 			iLikeData.map(ild => {
@@ -316,9 +382,7 @@ export default function App() {
 			id: 2,
 			title: "The news",
 			titleColor: "text-blue1",
-			text: () => {
-				return <p>placeholder</p>
-			}
+			text: () => <NewsSlides />
 		},
 		{
 			id: 3,
