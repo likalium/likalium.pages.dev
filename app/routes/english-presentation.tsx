@@ -1,131 +1,10 @@
-import { useState } from "react"
+import { useState } from "react";
 
-import { ArrowRight, ArrowLeft } from "@phosphor-icons/react"
+import { ArrowRight, ArrowLeft } from "@phosphor-icons/react";
 
-// DATA
-// Weather
-const weatherData = [
-	{
-		id: 0,
-		dayText: "Monday",
-		dayNum: 22,
-		weatherIcon: "p3j",
-		description: "Cloudy",
-		minTemp: 2,
-		maxTemp: 4,
-		windIcon: "NO",
-		windSpeed: 20
-	},
-	{
-		id: 1,
-		dayText: "Tuesday",
-		dayNum: 23,
-		weatherIcon: "p9",
-		description: "Drizzle",
-		minTemp: -2,
-		maxTemp: 2,
-		windIcon: "SE",
-		windSpeed: 5
-	},
-	{
-		id: 2,
-		dayText: "Wenesday",
-		dayNum: 24,
-		weatherIcon: "p13tern",
-		description: "Light rain",
-		minTemp: 0,
-		maxTemp: 6,
-		windIcon: "NNE",
-		windSpeed: 15
-	},
-	{
-		id: 3,
-		dayText: "Thursday",
-		dayNum: 25,
-		weatherIcon: "p4j",
-		description: "Cloudy sky",
-		minTemp: 0,
-		maxTemp: 3,
-		windIcon: "NNO",
-		windSpeed: 15
-	},
-	{
-		id: 4,
-		dayText: "Friday",
-		dayNum: 26,
-		weatherIcon: "p1j",
-		description: "Sunny",
-		minTemp: -2,
-		maxTemp: 3,
-		windIcon: "OSO",
-		windSpeed: 15
-	},
-	{
-		id: 5,
-		dayText: "Saturday",
-		dayNum: 27,
-		weatherIcon: "p2j",
-		description: "Sunny spells",
-		minTemp: -4,
-		maxTemp: 2,
-		windIcon: "SSE",
-		windSpeed: 15
-	},
-	{
-		id: 6,
-		dayText: "Sunday",
-		dayNum: 28,
-		weatherIcon: "p3j",
-		description: "Very Cloudy",
-		minTemp: -1,
-		maxTemp: 12,
-		windIcon: "SSO",
-		windSpeed: 35
-	}
-]
+// DATA IMPORTING
+import { weatherData, newsData, thisDayData, iLikeData } from "./siteData.js";
 
-// News
-const newsData = [
-	{
-		id: 0,
-		title: "Trump's comeback",
-		subtitle: "Donald Trump seems to be in the way of winning the american elections...",
-		desc: "The American electoral campaign started in Iowa, and Trump won hands down. Actually, it seems like americans forgot the behavior of Trump during his mandate from 2017 to 2021, and also his behavior when he had to leave the presidency. Only future will be able to tell us who will win these elections, but it's off to a bad start for democracy...",
-		image: "./assets/trump.jpg",
-		height: "50%",
-		width: "50%"
-	},
-	{
-		id: 1,
-		title: "French government voted the 'Immigration law'",
-		subtitle: "This Tuesday, French government voted a law that reduces rights for migrants",
-		desc: "French governement voted, this January 16, 2023, a law which makes that migrants will not able to receive some financial aids anymore. Yet, a part of these people actually need these aids, to make their family live. It's a controversial, and this decision isn't really approved by the people.",
-		image: "./assets/macron.jpg",
-		width: "50%",
-		height: "50%"
-	}
-]
-// On this day
-const thisDayData = [
-	{
-		id: 0,
-		title: "Newton solves Bernoulli's problem",
-		subtitle: "British mathematician and physicist Isaac Newton solves in a day a problem where he had six months to find a solution",
-		desc: "On January 26, 1697, Newton receives a mathematics problem from Swiss mathematician Jean Bernoulli. The challenge was to find a solution within six months. But Newton found the solution... the day he received the problem, just before going to bed.",
-	image: "./assets/newton.jpg",
-		height: "50%",
-		width: "50%"
-	},
-	{
-		id: 1,
-		title: "Spirit Rover begins Mars mission",
-		subtitle: "Twenty years ago, rover Spirit landed on Mars",
-		desc: "Launched June 10, 2003 by the NASA, the rover Spirit landed on Mars Janury 25, 2004. It took awesome pictures of Mars; in the highest quality at the time. It was supposed to last three months, but he was declared unoperational more than six years after landing, May 25, 2011.",
-		image: "./assets/spirit.jpg",
-		height: "50%",
-		width: "50%"
-	}
-]
 
 // Weather widget
 function Weather () {
@@ -168,180 +47,49 @@ function Weather () {
 	)
 }
 
-// Things I like
-const iLikeData = [
-	{
-		id: 0,
-		title: "Linux",
-		list: [ "Created in 1991", "Free and open-source", "Written in C" ],
-		images: () => {
-			return (
-				<div className="p-3 flex flex-col space-y-2">
-					<div className="flex flex-row space-x-3 justify-end">
-						<img src="./assets/Tux.svg" width="20%" />
-						<img src="./assets/torvalds.jpg" width="20%" className="rounded-img" />
-					</div>
-					<div className="flex flex-row space-x-3 justify-end">
-						<img src="./assets/archlinux.png" width="10%" />
-						<img src="./assets/nixos.png" width="10%" />
-						<img src="./assets/debian.png" width="8%" />
-						<img src="./assets/voidlinux.png" width="12%" />
-					</div>
-				</div>
-			)
-		}
-	},
-	{
-		id: 1,
-		title: "MF Doom",
-		list: ["Born in 1971 in London", "Real name: Daniel Dumile", "Pillar of hip-hop music", "Died in 2020 aged 49"],
-		images: () => {
-			return (
-				<div className="p-3 flex flex-col space-y-2">
-					<div className="flex flex-row justify-end space-x-6">
-						<img src="./assets/mfdoom.jpg" width="20%" className="rounded-img" />
-						<img src="./assets/mfdoomlarge.jpg" width="40%" className="rounded-img" />
-					</div>
-					<div className="flex flex-row space-x-3 justify-end">
-						<img src="./assets/madvillainy.jpg" width="20%" className="rounded-img" />
-						<img src="./assets/mmfood.jpg" width="20%" className="rounded-img" />
-						<img src="./assets/vaudevillevillain.jpg" width="20%" className="rounded-img" />
-					</div>
-				</div>
-			)
-		}
-	}
-]
-
 export default function App() {
 	const [ selected, setSelected ] = useState(0);
-	const [ thisDay, setThisDay ] = useState(0);
-	const [ iLike, setILike ] = useState(0);
-	const [news, setNews] = useState(0);
+	const [switchSlide, setSwitchSlide] = useState(0)
 
-	function ThisDaySlides() {
+	function Slides({data}) {
 		return (
-			thisDayData.map(d => {
-				if (d.id === thisDay) {
-					return (
-						<div className=" flex flex-row place-items-center" key={d.id}>
-							<div>
-								<button
-									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
-								onClick={() => {
-										if (thisDay > 0) {
-										setThisDay(thisDay -1);
-										}
-									}}>
-									<ArrowLeft weight="bold"/>
-								</button>
-							</div>
-							<div className="transition-opacity ease-linear duration-500 p-3 txt-img-align">
-								<div className="flex flex-col space-y-4 justify-between">
-									<div>
-										<h2 className="font-syne font-bold text-blue5 text-4xl">{d.title}</h2>
-										<h3 className="font-['Rajdhani'] text-fg text-2xl">{d.subtitle}</h3>
-									</div>
-									<p className="text-green1 pb-3">{d.desc}</p>
-								</div>
-								<img className="rounded-img" src={d.image} height={d.height} width={d.width} />
-							</div>
-							<div>
-								<button
-									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
-								onClick={() => {
-										if (thisDay < thisDayData.length-1) {
-											setThisDay(thisDay + 1)
-										}
-									}}>
-									<ArrowRight weight="bold"/>
-								</button>
-							</div>
-						</div>
-					)
-				}
-			})
-		)
-	};
-	function NewsSlides() {
-		return (
-			newsData.map(d => {
-				if (d.id === news) {
-					return (
-						<div className=" flex flex-row place-items-center" key={d.id}>
-							<div>
-								<button
-									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
-								onClick={() => {
-										if (news > 0) {
-										setNews(news -1);
-										}
-									}}>
-									<ArrowLeft weight="bold"/>
-								</button>
-							</div>
-							<div className="transition-opacity ease-linear duration-500 p-3 txt-img-align">
-								<div className="flex flex-col space-y-4 justify-between">
-									<div>
-										<h2 className="font-syne font-bold text-blue5 text-4xl">{d.title}</h2>
-										<h3 className="font-['Rajdhani'] text-fg text-2xl">{d.subtitle}</h3>
-									</div>
-									<p className="text-green1 pb-3">{d.desc}</p>
-								</div>
-								<img className="rounded-img" src={d.image} height={d.height} width={d.width} />
-							</div>
-							<div>
-								<button
-									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
-								onClick={() => {
-										if (news < newsData.length-1) {
-											setNews(news + 1)
-										}
-									}}>
-									<ArrowRight weight="bold"/>
-								</button>
-							</div>
-						</div>
-					)
-				}
-			})
-		)
-	};
-	const liHover="transition ease-in-out delay-150"
-	function ILikeSlides() {
-		return (
-			iLikeData.map(ild => {
-				if (ild.id === iLike ) {
-					const iLikeList = ild.list.map(l => { return <li>{l}</li>})
+			data.map(d => {
+				if (d.id === switchSlide ) {
+					const infoList = d.list.map(l => { return <li>{l}</li>})
 
 					return (
-						<div className="flex flex-row place-items-center" key={ild.id}>
+						<div className="flex flex-row place-items-center" key={d.id}>
 							<div>
 								<button
 									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
 									onClick={() => {
-										if (iLike > 0) {
-											setILike(iLike -1);
+										if (switchSlide > 0) {
+											setSwitchSlide(switchSlide-1);
 										}
 									}}>
 									<ArrowLeft weight="bold"/>
 								</button>
 							</div>
-							<div className="p-3 flex flex-row place-items-center justify-between">
+							<div
+								style={{ whiteSpace: 'pre-line'}}
+								className="p-3 flex flex-row place-items-center justify-between"
+								>
 								<div className="shrink-0">
-									<h2 className="font-syne text-blue5 text-8xl font-bold">{ild.title}</h2>
+									<h2 className={"font-syne text-blue5 font-bold "+d.titleSize} >
+										{d.title}
+									</h2>
 									<ol className="list-disc list-inside pl-6 pt-10 font-inter text-4xl">
-										{iLikeList}
+										{infoList}
 									</ol>
 								</div>
-								{ild.images()}
+								{d.images()}
 							</div>
 							<div>
 								<button
 									className="transition ease-linear duration-100 delay-0 bg-black rounded-full p-2 border-2 border-bg hover:border-magenta hover:text-magenta"
 									onClick={() => {
-										if (iLike < iLikeData.length-1) {
-											setILike(iLike + 1)
+										if (switchSlide < data.length-1) {
+											setSwitchSlide(switchSlide + 1)
 										}
 									}}>
 									<ArrowRight weight="bold"/>
@@ -362,11 +110,32 @@ export default function App() {
 				return (
 					<div className="p-2">
 						<ol className="space-y-4 text-3xl list-decimal list-inside pl-6 font-syne text-terminalBlack">
-							<li key="weather"><span className="text-red bg-[#f7768e2f] p-1 border-2 rounded-md border-bg">The weather</span></li>
-							<li key="news"><span className="text-blue2 bg-[#0db9d72f] p-1 border-2 rounded-md border-bg">The news</span></li>
-							<li key="week"><span className="text-magenta bg-[#bb9af72f] p-1 border-2 rounded-md border-bg">It happened the same week</span></li>
-							<li key="like"><span className="text-green1 bg-[#73daca2f] p-1 border-2 rounded-md border-bg">Two things I like</span></li>
-							<li key="conclusion"><span className="text-teal bg-[#1abc9c2f] p-1 corder-2 rounded-md border-bg">Conclusion</span></li>
+							<li key="weather">
+								<span className="text-red bg-[#f7768e2f] p-1 border-2 rounded-md border-bg">
+									The weather
+								</span>
+							</li>
+							<li key="news">
+								<span className="text-blue2 bg-[#0db9d72f] p-1 border-2 rounded-md border-bg">
+									The news
+								</span>
+							</li>
+							<li key="week">
+								<span className="text-magenta bg-[#bb9af72f] p-1 border-2 rounded-md border-bg">
+									It happened the same week
+								</span>
+							</li>
+							<li key="like">
+								<span className="text-green1 bg-[#73daca2f] p-1 border-2 rounded-md border-bg">
+									Two things I like
+								</span>
+							</li>
+							<li key="conclusion">
+								<span
+									className="text-teal bg-[#1abc9c2f] p-1 corder-2 rounded-md border-bg">
+									Conclusion
+								</span>
+							</li>
 						</ol>
 					</div>
 				)
@@ -382,31 +151,19 @@ export default function App() {
 			id: 2,
 			title: "The news",
 			titleColor: "text-blue1",
-			text: () => <NewsSlides />
+			text: () => <Slides data={newsData} />
 		},
 		{
 			id: 3,
 			title: "It happened the same week",
 			titleColor: "text-magenta",
-			text: () => {
-				return (
-					<div>
-						<ThisDaySlides />
-					</div>
-				)
-			}
+			text: () => <Slides data={thisDayData} />
 		},
 		{
 			id: 4,
 			title: "Two things I like",
 			titleColor: "text-green1",
-			text: () => {
-				return (
-				<div>
-						<ILikeSlides />
-					</div>
-				)
-			}
+			text: () => <Slides data={iLikeData} />
 		},
 		{
 			id: 5,
@@ -436,8 +193,11 @@ export default function App() {
 			return (
 				<button
 					key={step.id}
-					className={selected === step.id ? "transition ease-linear duration-200 delay-0 bg-black border-orange text-purple font-['Rajdhani'] border-2 rounded-2xl p-2" : "transition ease-linear duration-200 delay-0 bg-bgDark text-dark5 border-bg font-['Rajdhani'] border-2 rounded-2xl p-2"}
-					onClick={() => setSelected(step.id)}
+					className={selected === step.id ? "bg-black border-orange text-purple font-['Rajdhani'] border-2 rounded-2xl p-2" : "bg-bgDark text-dark5 border-bg font-['Rajdhani'] border-2 rounded-2xl p-2"}
+					onClick={() => {
+						setSelected(step.id);
+						setSwitchSlide(0)
+					}}
 				>
 					{step.id + 1}. {step.title}
 				</button>
@@ -455,9 +215,10 @@ export default function App() {
 			<button
 				className="transition ease-linear border-2 duration-300 border-red rounded-2xl hover:bg-red hover:text-bgDark p-2 font-['Rajdhani']"
 				onClick={() => {
-				if (selected > 0) {
-					setSelected(selected - 1)
-				}
+					if (selected > 0) {
+						setSelected(selected - 1)
+						setSwitchSlide(0)
+					}
 				}}>
 				<span className="flex flex-row justify-center space-x-2">
 					<div className="flex flex-col justify-center"><ArrowLeft weight="bold" /></div>
@@ -472,9 +233,10 @@ export default function App() {
 			<button
 				className="transition ease-linear delay-0 buration-300 border-2 border-green rounded-2xl hover:bg-green hover:text-bgDark p-2 font-['Rajdhani']"
 				onClick={() => {
-				if (selected < steps.length - 1) {
-					setSelected(selected + 1)
-				}
+					if (selected < steps.length - 1) {
+						setSelected(selected + 1);
+						setSwitchSlide(0)
+					}
 				}}>
 				<span className="flex flex-row justify-center space-x-2">
 					Next

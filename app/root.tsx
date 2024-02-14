@@ -20,8 +20,18 @@ import stylesheet from "./tailwind.css";
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
   { rel: "icon", href: "./favicon.ico", as: "image" },
-  { rel: "preload", href: "./assets/newton.jpg" , as: "image" },
-  { rel: "preload", href: "./assets/spirit.jpg" , as: "image" },
+  { rel: "preload", href: "./assets/black_sea.jpg", as: "image" },
+  { rel: "preload", href: "./assets/ukrain_flag.jpg", as: "image" },
+  { rel: "preload", href: "./assets/russia_flag.jpg", as: "image" },
+  { rel: "preload", href: "./assets/shooting.jpg", as: "image" },
+  { rel: "preload", href: "./assets/nature_genome_cover.jpg", as: "image" },
+  { rel: "preload", href: "./assets/dna.jpg", as: "image" },
+  { rel: "preload", href: "./assets/human_genome_project.jpg", as: "image" },
+  { rel: "preload", href: "./assets/dna_artwork.jpg", as: "image" },
+  { rel: "preload", href: "./assets/einstein_body.jpg", as: "image" },
+  { rel: "preload", href: "./assets/einstein_head.jpg", as: "image" },
+  { rel: "preload", href: "./assets/nuclear_explosion.jpg", as: "image" },
+  { rel: "preload", href: "./assets/truman.jpg", as: "image" },
   { rel: "preload", href: "./assets/Tux.svg" , as: "image" },
   { rel: "preload", href: "./assets/torvalds.jpg" , as: "image" },
   { rel: "preload", href: "./assets/archlinux.png" , as: "image" },
@@ -32,7 +42,7 @@ export const links: LinksFunction = () => [
   { rel: "preload", href: "./assets/mfdoomlarge.jpg" , as: "image" },
   { rel: "preload", href: "./assets/madvillainy.jpg" , as: "image" },
   { rel: "preload", href: "./assets/mmfood.jpg" , as: "image" },
-  { rel: "preload", href: "./assets/vaudevillevillain.jpg", as: "image"  }
+  { rel: "preload", href: "./assets/vaudevillevillain.jpg", as: "image" }
 ];
 
 export const meta: MetaFunction = () => {
