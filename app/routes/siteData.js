@@ -71,7 +71,7 @@ export const newsData = [
 	},
 	{
 		id: 1,
-		title: "Shooting in Kansas",
+		title: "Shooting in Missouri",
 		titleSize: "text-4xl",
 		list: ["Wednesday, February 14", "In Kansas City, in Missouri", "After a celebration parade"],
 		images: () => <img src="./assets/shooting.jpg" width="30%" className="rounded-img" />
